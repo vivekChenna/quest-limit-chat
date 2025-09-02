@@ -76,6 +76,10 @@ const Chat = () => {
     return `${user.questionsToday}/10 today`;
   };
 
+const generateChatId = (): string => {
+    return 'chat-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+  };
+
   const generateBotResponse = (userMessage: string): string => {
     // Simple mock responses
     const responses = [
@@ -145,7 +149,7 @@ const Chat = () => {
       } else {
         // Create new chat
         const newChat: ChatHistory = {
-          id: Date.now().toString(),
+          id: generateChatId(),
           title: chatTitle,
           messages: updatedMessages,
           createdAt: new Date(),
@@ -270,7 +274,7 @@ const Chat = () => {
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b bg-white flex items-center justify-between">
+        <div className="p-4 border-b bg-card flex items-center justify-between">
           <div className="flex items-center space-x-2">
             {!sidebarOpen && (
               <Button
@@ -281,7 +285,7 @@ const Chat = () => {
                 <Menu className="h-4 w-4" />
               </Button>
             )}
-            <h1 className="text-lg font-semibold">
+            <h1 className="text-lg font-semibold text-foreground">
               {activeChat ? chatHistory.find(c => c.id === activeChat)?.title || "Chat" : "New Chat"}
             </h1>
           </div>
@@ -313,9 +317,9 @@ const Chat = () => {
                         <User className="h-4 w-4 text-primary-foreground" />
                       )}
                     </div>
-                    <div className={`rounded-lg p-4 ${message.isBot ? "bg-white border" : "bg-primary text-primary-foreground"}`}>
-                      <p className="text-sm">{message.content}</p>
-                    </div>
+                     <div className={`rounded-lg p-4 ${message.isBot ? "bg-chat-bot-message border border-border" : "bg-primary text-primary-foreground"}`}>
+                       <p className="text-sm leading-relaxed">{message.content}</p>
+                     </div>
                   </div>
                 </div>
               ))
@@ -326,13 +330,13 @@ const Chat = () => {
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center">
                     <Bot className="h-4 w-4 text-muted-foreground" />
                   </div>
-                  <div className="rounded-lg p-4 bg-white border">
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-                    </div>
-                  </div>
+                   <div className="rounded-lg p-4 bg-chat-bot-message border border-border">
+                     <div className="flex space-x-1">
+                       <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
+                       <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
+                       <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                     </div>
+                   </div>
                 </div>
               </div>
             )}
@@ -340,21 +344,21 @@ const Chat = () => {
         </ScrollArea>
 
         {/* Input Area */}
-        <div className="p-4 border-t bg-white">
+        <div className="p-4 border-t bg-card">
           <div className="max-w-4xl mx-auto">
             <div className="flex space-x-2">
               <Input
                 value={currentMessage}
                 onChange={(e) => setCurrentMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder={canAskQuestion() ? "Type your message..." : "Daily question limit reached"}
+                placeholder={canAskQuestion() ? "Message ChatBot AI..." : "Daily question limit reached"}
                 disabled={!canAskQuestion() || isLoading}
-                className="flex-1"
+                className="flex-1 bg-background border-border text-foreground placeholder:text-muted-foreground"
               />
               <Button
                 onClick={handleSendMessage}
                 disabled={!currentMessage.trim() || !canAskQuestion() || isLoading}
-                className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300"
               >
                 <Send className="h-4 w-4" />
               </Button>
