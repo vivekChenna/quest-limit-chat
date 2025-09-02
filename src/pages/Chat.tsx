@@ -60,7 +60,17 @@ const Chat = () => {
     // Load chat history from localStorage
     const savedHistory = localStorage.getItem(`chatHistory_${parsedUser.username}`);
     if (savedHistory) {
-      setChatHistory(JSON.parse(savedHistory));
+      const parsedHistory = JSON.parse(savedHistory);
+      // Convert string dates back to Date objects
+      const historyWithDates = parsedHistory.map((chat: any) => ({
+        ...chat,
+        createdAt: new Date(chat.createdAt),
+        messages: chat.messages.map((msg: any) => ({
+          ...msg,
+          timestamp: new Date(msg.timestamp)
+        }))
+      }));
+      setChatHistory(historyWithDates);
     }
   }, [navigate]);
 
