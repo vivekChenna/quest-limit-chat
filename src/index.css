@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 13% 9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
 
-    --card: 224 71% 4%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 220 13% 9%;
-    --primary-glow: 213 100% 85%;
+    --primary: 14 88% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 14 88% 65%;
 
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 215 28% 17%;
-    --muted-foreground: 217.9 10.6% 64.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 215 28% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 14 88% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 216 12% 84%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 14 88% 48%;
 
     /* Chat specific colors */
-    --chat-background: 220 13% 9%;
-    --chat-user-message: 213 94% 68%;
-    --chat-bot-message: 215 28% 17%;
-    --sidebar-background: 224 71% 4%;
+    --chat-background: 0 0% 100%;
+    --chat-user-message: 14 88% 48%;
+    --chat-bot-message: 0 0% 96%;
+    --sidebar-background: 0 0% 98%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(213, 94%, 68%), hsl(213, 100%, 85%));
-    --gradient-hero: linear-gradient(135deg, hsl(213, 94%, 68%) 0%, hsl(225, 100%, 75%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(14, 88%, 48%), hsl(14, 88%, 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(14, 88%, 48%) 0%, hsl(14, 95%, 55%) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(213 94% 68% / 0.3);
-    --shadow-elegant: 0 10px 30px -10px hsl(213 94% 68% / 0.2);
+    --shadow-glow: 0 0 40px hsl(14 88% 48% / 0.2);
+    --shadow-elegant: 0 10px 30px -10px hsl(14 88% 48% / 0.15);
 
     --radius: 0.5rem;
 
@@ -71,41 +71,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 212 13% 6%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
 
-    --card: 220 13% 9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
 
-    --popover: 220 13% 9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 213 94% 68%;
+    --primary: 14 88% 48%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 215 28% 17%;
-    --muted-foreground: 217.9 10.6% 64.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 215 28% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 14 88% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 216 12% 84%;
-    --sidebar-background: 224 71% 4%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 213 94% 68%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 14 88% 48%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 14 88% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 28% 17%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 215 28% 17%;
-    --sidebar-ring: 213 94% 68%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 14 88% 48%;
   }
 }
 
